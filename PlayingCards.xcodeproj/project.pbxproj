@@ -13,6 +13,8 @@
 		CB7821B2287F47C900A410A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7821B0287F47C900A410A6 /* Main.storyboard */; };
 		CB7821B4287F47CB00A410A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7821B3287F47CB00A410A6 /* Assets.xcassets */; };
 		CB7821B7287F47CB00A410A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7821B5287F47CB00A410A6 /* LaunchScreen.storyboard */; };
+		CB7821C0287F4BFB00A410A6 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7821BF287F4BFB00A410A6 /* PlayingCard.swift */; };
+		CB7821C2287FFFAE00A410A6 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7821C1287FFFAE00A410A6 /* PlayingCardDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CB7821B3287F47CB00A410A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB7821B6287F47CB00A410A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB7821B8287F47CB00A410A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB7821BF287F4BFB00A410A6 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		CB7821C1287FFFAE00A410A6 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		CB7821A9287F47C900A410A6 /* PlayingCards */ = {
 			isa = PBXGroup;
 			children = (
-				CB7821AA287F47C900A410A6 /* AppDelegate.swift */,
 				CB7821AC287F47C900A410A6 /* SceneDelegate.swift */,
 				CB7821AE287F47C900A410A6 /* ViewController.swift */,
 				CB7821B0287F47C900A410A6 /* Main.storyboard */,
 				CB7821B3287F47CB00A410A6 /* Assets.xcassets */,
-				CB7821B5287F47CB00A410A6 /* LaunchScreen.storyboard */,
 				CB7821B8287F47CB00A410A6 /* Info.plist */,
+				CB7821BE287F4AAD00A410A6 /* SupportingFiles */,
+				CB7821BF287F4BFB00A410A6 /* PlayingCard.swift */,
+				CB7821C1287FFFAE00A410A6 /* PlayingCardDeck.swift */,
 			);
 			path = PlayingCards;
+			sourceTree = "<group>";
+		};
+		CB7821BE287F4AAD00A410A6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CB7821AA287F47C900A410A6 /* AppDelegate.swift */,
+				CB7821B5287F47CB00A410A6 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +154,8 @@
 			files = (
 				CB7821AF287F47C900A410A6 /* ViewController.swift in Sources */,
 				CB7821AB287F47C900A410A6 /* AppDelegate.swift in Sources */,
+				CB7821C2287FFFAE00A410A6 /* PlayingCardDeck.swift in Sources */,
+				CB7821C0287F4BFB00A410A6 /* PlayingCard.swift in Sources */,
 				CB7821AD287F47C900A410A6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +319,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,7 +346,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
