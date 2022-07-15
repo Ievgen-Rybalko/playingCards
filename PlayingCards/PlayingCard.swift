@@ -31,6 +31,7 @@ struct PlayingCard: CustomStringConvertible {
         case ace
         case face(String)
         case numeric(Int)
+        //cards
         
         var order: Int {
             switch self {
