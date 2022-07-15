@@ -17,7 +17,22 @@ class PlayingCardView: UIView {
     var suit: String = "♥️" { didSet {setNeedsDisplay(); setNeedsLayout() }}
     @IBInspectable
     var isFaceUp : Bool = true  { didSet {setNeedsDisplay(); setNeedsLayout() }}
-     
+    
+    var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize { didSet {setNeedsDisplay() }}
+    
+  //???view boundaries of func???
+    @objc func adjustFaceCardScale(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed:
+            faceCardScale *= recognizer.scale
+            
+        case .ended:
+            recognizer.scale = 0.6
+            faceCardScale = recognizer.scale
+        default: break
+        }
+    }
+    
     private func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
@@ -135,7 +150,7 @@ class PlayingCardView: UIView {
         
         if isFaceUp {
             if let faceCardImage = UIImage(named: rankString, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+                faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
             } else {
                 drawPips()
             }

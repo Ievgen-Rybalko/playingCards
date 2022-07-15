@@ -19,6 +19,7 @@
                             <view opaque="NO" contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZZ-7s-P98" customClass="PlayingCardView" customModule="PlayingCards" customModuleProvider="target">
                                 <rect key="frame" x="21" y="154" width="374" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BZZ-7s-P98" secondAttribute="height" multiplier="5:8" id="IlR-2y-CHa"/>
                                     <constraint firstAttribute="width" priority="750" constant="800" id="Qnx-nd-miP"/>
@@ -28,6 +29,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="csO-ld-bCl" appends="YES" id="Yxt-ct-7PN"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -41,8 +45,16 @@
                             <constraint firstItem="BZZ-7s-P98" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="svT-WS-m4O"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PlayingCardView" destination="BZZ-7s-P98" id="LnN-eN-YLN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="csO-ld-bCl">
+                    <connections>
+                        <action selector="flipCard:" destination="BYZ-38-t0r" id="xLZ-PW-LNM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
         </scene>
